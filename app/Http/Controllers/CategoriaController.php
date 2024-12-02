@@ -7,6 +7,11 @@ use App\Models\categoria;
 
 class CategoriaController extends Controller
 {
+
+    public function index(){
+        $categorias = categoria::all();
+        return view('categoria',compact('categorias'));
+    }
     public function getCategoria(){
         $categorias = categoria::all();
         return $categorias;
